@@ -26,5 +26,7 @@ namespace ClickDummy
         {
             this.InitializeComponent();
         }
+
+        private void GotoNextPage(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(BlankPage1));
     }
 }
