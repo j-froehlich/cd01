@@ -11,6 +11,9 @@
       <Version>6.2.12</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml" Version="2.6.0-prerelease.210430001" />
+    <PackageReference Include="Refractored.MvvmHelpers">
+      <Version>1.6.2</Version>
+    </PackageReference>
     <PackageReference Include="Uno.Core" Version="2.4.0-dev.2" />
     <PackageReference Include="Uno.Cupertino">
       <Version>1.0.0-dev.764</Version>
