@@ -6,12 +6,34 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <!--
+            <Style x:Key="ErrorStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="DarkRed"/>
+                <Setter Property="FontFamily" Value="Segoe UI Semilight"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style x:Key="StatusStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Segoe UI Semilight"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            -->
+            
             <ResourceDictionary.MergedDictionaries>
                 <!-- Load WinUI resources -->
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
 
                 <!-- Application's custom styles -->
+                <!--
+                <Style x:Key="TitleStyle" TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#707070"/>
+                    <Setter Property="FontFamily" Value="Segoe UI Light"/>
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+                -->
+
                 <!-- other ResourceDictionaries -->
+                <ResourceDictionary Source="Styles/Globals.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

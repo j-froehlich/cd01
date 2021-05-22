@@ -57,7 +57,7 @@ namespace ClickDummy
 
             // Overlap the default colors with the application's colors palette. 
             // TODO: Replace ms-appx:///Views/ColorPaletteOverride.xaml with your resourceDictionary.
-            this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Views/ColorPaletteOverride.xaml") });
+            this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
 
             // Add all the material resources. Those resources depend on the colors above, which is why this one must be added last.
             this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialResources());
