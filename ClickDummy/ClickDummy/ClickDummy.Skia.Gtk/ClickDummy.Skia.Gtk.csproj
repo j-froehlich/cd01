@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
+  
   <PropertyGroup>
     <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+  
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>;NU1701;1702</NoWarn>
     <WarningsAsErrors>;NU1605</WarningsAsErrors>
@@ -30,4 +32,5 @@
     <PackageReference Include="Uno.UI.RemoteControl" Version="3.8.0-dev.225" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\ClickDummy.Shared\ClickDummy.Shared.projitems" Label="Shared" />
+  
 </Project>
