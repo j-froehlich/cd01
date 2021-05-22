@@ -8,18 +8,27 @@
       you need to make sure that the version provided here matches https://github.com/novotnyllc/MSBuildSdkExtras/blob/main/Source/MSBuild.Sdk.Extras/DefaultItems/ImplicitPackages.targets#L11.
       This is not an issue when libraries are referenced through nuget packages. See https://github.com/unoplatform/uno/issues/446 for more details.
       -->
-      <Version>6.2.11</Version>
+      <Version>6.2.12</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.UI.Xaml" Version="2.5.0" />
-    <PackageReference Include="Uno.Core" Version="2.3.0" />
-    <PackageReference Include="Uno.UI" Version="3.7.4" />
+    <PackageReference Include="Microsoft.UI.Xaml" Version="2.6.0-prerelease.210430001" />
+    <PackageReference Include="Uno.Core" Version="2.4.0-dev.2" />
+    <PackageReference Include="Uno.Cupertino">
+      <Version>1.0.0-dev.764</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.Material">
+      <Version>1.0.0-dev.764</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.ShowMeTheXAML">
+      <Version>1.0.59</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.UI" Version="3.8.0-dev.225" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>0c9a7623-3176-4991-be4e-bf53f8d6f9ea</ProjectGuid>
+    <ProjectGuid>{0C9A7623-3176-4991-BE4E-BF53F8D6F9EA}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClickDummy</RootNamespace>

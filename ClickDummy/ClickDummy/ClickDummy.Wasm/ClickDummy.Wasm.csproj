@@ -2,7 +2,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
@@ -37,11 +39,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
-    <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.0.1" />
-    <PackageReference Include="Uno.UI.WebAssembly" Version="3.7.4" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.3.4" />
-    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.3.4" />
+    <PackageReference Include="Uno.Cupertino" Version="1.0.0-dev.764" />
+    <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.1.0-dev.1" />
+    <PackageReference Include="Uno.Material" Version="1.0.0-dev.764" />
+    <PackageReference Include="Uno.ShowMeTheXAML" Version="1.0.59" />
+    <PackageReference Include="Uno.UI.WebAssembly" Version="3.8.0-dev.225" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.8.0-dev.225" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.Wasm.Bootstrap" Version="2.1.0" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="2.1.0" />
   </ItemGroup>
   <Import Project="..\ClickDummy.Shared\ClickDummy.Shared.projitems" Label="Shared" Condition="Exists('..\ClickDummy.Shared\ClickDummy.Shared.projitems')" />
 </Project>
