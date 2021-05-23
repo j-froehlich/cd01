@@ -6,11 +6,11 @@
     xmlns:converters="using:ClickDummy.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="using:Uno.UI.Toolkit"
     xmlns:skia="http://uno.ui/skia"
     xmlns:ios="http://nventive.com/ios"
     mc:Ignorable="d skia"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:toolkit="using:Uno.UI.Toolkit">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <converters:StringFormatConverter x:Key="StringFormatConverter" />
@@ -33,6 +33,9 @@
         </CommandBar>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="LightGray" Padding="5">
+            <Button Content="Next Page" Click="GotoNextPage" />
+            <Button Content="Previous Page" Click="GoToPrevPage" />
+            
             <Canvas Background="Blue" Width="10" x:Name="IssueTypeIndicator" />
             <TextBlock Text="{x:Bind Item.Id}" Margin="6,0" VerticalAlignment="Center" />
             <ComboBox x:Name="IssueTypeBox"

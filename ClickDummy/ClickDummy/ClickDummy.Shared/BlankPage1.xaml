@@ -6,27 +6,31 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:skia="http://uno.ui/skia"
+    xmlns:toolkit="using:Uno.UI.Toolkit"
     mc:Ignorable="d skia"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:toolkit="using:Uno.UI.Toolkit">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="1227" d:DesignHeight="704.5">
 
-    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top">
+    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top" Background="#FF977B7B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <CommandBar Grid.Row="0" Content="BlankPage1">
+        <CommandBar Content="BlankPage1" Grid.ColumnSpan="2" VerticalAlignment="Center">
             <CommandBar.PrimaryCommands>
                 <skia:AppBarButton Content="Back" Click="NavigateBack" />
             </CommandBar.PrimaryCommands>
         </CommandBar>
-        
-        <StackPanel Grid.Row="1">
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
             <TextBlock Text="Main Content of Blank Page 1" />
             <Button Content="Next Page" Click="GotoNextPage" />
             <Button Content="Previous Page" Click="GoToPrevPage" />
         </StackPanel>
 
-    </Grid>    
+    </Grid>
 </Page>

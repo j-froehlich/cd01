@@ -30,8 +30,10 @@ namespace ClickDummy
             this.InitializeComponent();
         }
 
+        private void GotoNextPage(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(TodoApp));
+
         private void GoToPrevPage(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(BlankPage1));
-        
+
         private void NavigateBack(object sender, RoutedEventArgs e) => Frame.GoBack();
 
         public IssueItem Item
