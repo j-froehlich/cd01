@@ -40,12 +40,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Uno.CodeGen" Version="1.34.0-dev.175" />
     <PackageReference Include="Uno.Cupertino" Version="1.0.0-dev.764" />
     <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.1.0-dev.1" />
     <PackageReference Include="Uno.Material" Version="1.0.0-dev.764" />
+    <PackageReference Include="Uno.Microsoft.Toolkit" Version="7.1.0-build.2.g0e224f133a" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Parsers" Version="6.1.0-build.207.gcac670e618" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp" Version="7.1.0-build.2.g0e224f133a" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="7.1.0-build.2.g0e224f133a" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Animations" Version="7.1.0-build.2.g0e224f133a" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls" Version="7.1.0-build.2.g0e224f133a" />
+    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" Version="7.1.0-build.2.g0e224f133a" />
     <PackageReference Include="Uno.ShowMeTheXAML" Version="1.0.59" />
-    <PackageReference Include="Uno.UI.WebAssembly" Version="3.8.0-dev.225" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.8.0-dev.225" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.WebAssembly" Version="3.8.0-dev.241" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.8.0-dev.241" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.Wasm.Bootstrap" Version="2.1.0" />
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="2.1.0" />
   </ItemGroup>
