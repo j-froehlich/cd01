@@ -1,6 +1,8 @@
 ﻿<linker>
   <assembly fullname="ClickDummy.Wasm" />
   <assembly fullname="Uno.UI" />
+  <assembly fullname="System.Text.Json" />
+  <assembly fullname="IdentityModel" />
   <assembly fullname="Microsoft.Extensions.Options" />
 
   <assembly fullname="System.Core">
