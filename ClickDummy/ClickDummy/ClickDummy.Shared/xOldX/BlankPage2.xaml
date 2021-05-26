@@ -12,12 +12,20 @@
     mc:Ignorable="d skia"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.TopAppBar>
+        <AppBar xmlns:src="using:ClickDummy.Views.Shared">
+            <src:AppBar />
+        </AppBar>
+    </Page.TopAppBar>
+
     <Page.Resources>
         <converters:StringFormatConverter x:Key="StringFormatConverter" />
     </Page.Resources>
 
-    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RowSpacing="8">
+    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RowSpacing="8" Margin="24,24,24,24">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -32,10 +40,13 @@
             </CommandBar.PrimaryCommands>
         </CommandBar>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="LightGray" Padding="5">
-            <Button Content="Next Page" Click="GotoNextPage" />
-            <Button Content="Previous Page" Click="GoToPrevPage" />
-            
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,0,0,0">
+            <TextBlock Text="Main Content of Blank Page 2" VerticalAlignment="Center" Margin="10,0,10,0" />
+            <Button Content="Next Page" Click="GotoNextPage" Margin="10,0,10,0" />
+            <Button Content="Previous Page" Click="GoToPrevPage" Margin="10,0,10,0" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="LightGray" Padding="5">
             <Canvas Background="Blue" Width="10" x:Name="IssueTypeIndicator" />
             <TextBlock Text="{x:Bind Item.Id}" Margin="6,0" VerticalAlignment="Center" />
             <ComboBox x:Name="IssueTypeBox"
@@ -47,17 +58,18 @@
             Margin="10,0,0,0"/>
         </StackPanel>
 
-        <TextBox Text="{x:Bind Item.Description,Mode=TwoWay}"
-         Grid.Row="2"
-         AcceptsReturn="True"
-         Header="Description"
-         Height="200"
-         Margin="10,0"
-         PlaceholderText="Enter Text Here" />
+        <TextBox
+            Text="{x:Bind Item.Description,Mode=TwoWay}"
+            Grid.Row="3"
+            AcceptsReturn="True"
+            Header="Description"
+            Height="200"
+            Margin="10,0"
+            PlaceholderText="Enter Text Here" />
 
-        <TextBlock Text="Planning" FontWeight="Bold" FontSize="16" Grid.Row="3" Margin="10,0" />
+        <TextBlock Text="Planning" FontWeight="Bold" FontSize="16" Grid.Row="4" Margin="10,0" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Margin="10,0" Spacing="20">
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Margin="10,0" Spacing="20">
             <StackPanel Background="LightGray" Padding="20">
                 <TextBlock Text="Effort" FontWeight="Bold" FontSize="16" Margin="10,0" />
                 <TextBox Text="{x:Bind Item.Effort,Mode=TwoWay}"
@@ -68,8 +80,7 @@
                Background="Transparent"/>
                 <Slider Value="{x:Bind Item.Effort,Mode=TwoWay}" Width="100" Minimum="0" Maximum="15" />
             </StackPanel>
-            <StackPanel Background="LightGray"
-              Padding="20">
+            <StackPanel Background="LightGray" Padding="20">
                 <TextBlock Text="Status" FontWeight="Bold" FontSize="16" Margin="10,0" />
                 <ComboBox ItemsSource="{x:Bind StatusList}"
               SelectedItem="{x:Bind Item.Status}"
@@ -80,13 +91,7 @@
             </StackPanel>
         </StackPanel>
 
-        <TextBlock Text="{x:Bind FormatDate('Created:', Item.CreatedAt)}" Grid.Row="5"
-           Margin="10,0"/>
-
-        <StackPanel Grid.Row="7">
-            <TextBlock Text="Main Content of Blank Page 2" />
-            <Button Content="Previous Page" Click="GoToPrevPage" />
-        </StackPanel>
+        <TextBlock Text="{x:Bind FormatDate('Created:', Item.CreatedAt)}" Grid.Row="6" Margin="10,0"/>
 
     </Grid>
 </Page>

@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="ClickDummy.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClickDummy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:skia="http://uno.ui/skia"
+    xmlns:toolkit="using:Uno.UI.Toolkit"
+    mc:Ignorable="d skia"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="1227" d:DesignHeight="704.5">
+
+    <Page.TopAppBar>
+        <AppBar xmlns:src="using:ClickDummy.Views.Shared">
+            <src:AppBar />
+        </AppBar>
+    </Page.TopAppBar>
+
+    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top" Background="#FF977B7B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <CommandBar Content="BlankPage1" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <CommandBar.PrimaryCommands>
+                <skia:AppBarButton Content="Back" Click="NavigateBack" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,0,0,0">
+            <TextBlock Text="Main Content of Blank Page 1" VerticalAlignment="Center" Margin="10,0,10,0" />
+            <Button Content="Next Page" Click="GotoNextPage" Margin="10,0,10,0" />
+            <Button Content="Previous Page" Click="GoToPrevPage" Margin="10,0,10,0" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="15,15,15,15">
+            <StackPanel.Resources>
+                <Storyboard x:Name="myStoryboard">
+                    <DoubleAnimation
+                       Storyboard.TargetName="myTransform"
+                       Storyboard.TargetProperty="Angle"
+                       From="0" To="360" Duration="0:0:5" 
+                       RepeatBehavior="Forever" />
+                </Storyboard>
+            </StackPanel.Resources>
+
+            <Rectangle Width="50" Height="50" Fill="RoyalBlue" PointerPressed="StartAnimation">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="myTransform" Angle="45" CenterX="25" CenterY="25" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </StackPanel>
+
+    </Grid>
+</Page>

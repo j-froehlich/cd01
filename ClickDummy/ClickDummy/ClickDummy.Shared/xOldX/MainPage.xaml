@@ -9,8 +9,15 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     xmlns:toolkit="using:Uno.UI.Toolkit">
 
-    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top">
+    <Page.TopAppBar>
+        <AppBar xmlns:src="using:ClickDummy.Views.Shared">
+            <src:AppBar />
+        </AppBar>
+    </Page.TopAppBar>
+
+    <Grid toolkit:VisibleBoundsPadding.PaddingMask="Top" Margin="24,24,24,24">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -22,8 +29,8 @@
             <Button Content="Next Page" Click="GotoNextPage" />
         </StackPanel>
 
-        <StackPanel>
-            <TextBlock Text="{Binding Value, ElementName=slider}" Margin="20" FontSize="30" />
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="{Binding Value, ElementName=slider}" Margin="24" FontSize="30" />
             <Slider x:Name="slider"/>
         </StackPanel>
     </Grid>

@@ -30,9 +30,36 @@ namespace ClickDummy
             this.InitializeComponent();
         }
 
+        // public enum MenuItems { MainPage, BlankPage1, BlankPange2, TodoApp, ClickDummy.View.Analysing.AnalysePage }
+
         private void GoToPrevPage(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(BlankPage2));
 
         private void NavigateBack(object sender, RoutedEventArgs e) => Frame.GoBack();
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(sender is Button button)) return;
+
+            switch (button.Content)
+            {
+                case "Home":
+                    Frame.Navigate(typeof(ClickDummy.MainPage));
+                    Console.WriteLine("Default value...");
+                    break;
+                case "Page 1":
+                    Frame.Navigate(typeof(ClickDummy.TodoApp));
+                    Console.WriteLine("Default value...");
+                    break;
+                case "Page 2":
+                    Frame.Navigate(typeof(ClickDummy.Views.Analysing.AnalysePage));
+                    Console.WriteLine("Default value...");
+                    break;
+                default:
+                    Frame.Navigate(typeof(MainPage));
+                    Console.WriteLine("Default value...");
+                    break;
+            }
+        }
 
         private void ItemClicked(object sender, RoutedEventArgs e)
         {

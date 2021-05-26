@@ -2,6 +2,7 @@
 using Uno.Extensions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Uno.UI.Controls;
 
 namespace ClickDummy.Controls
 {
@@ -9,7 +10,7 @@ namespace ClickDummy.Controls
     public partial class NativeProgress : Control
     {
         /// 🛈 base("progress") would create a <progress> and </progress> HTML element.
-        public NativeProgress()  : base ("TODO") // 🎯 Instantiate the correct HTML element.
+        public NativeProgress() : base("TODO") // 🎯 Instantiate the correct HTML element.
         {
             MinHeight = 20;
             HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -45,7 +46,7 @@ namespace ClickDummy.Controls
 
             // 🛈 Usage: SetAttribute("HtmlAttributeName", "Value");
             SetAttribute("TODO", calculatedValue);  // 🎯 Set HTML attribute to calculatedValue
-			SetAttribute("TODO", calculatedMax);    // 🎯 Set HTML attribute to calculatedMax            
+            SetAttribute("TODO", calculatedMax);    // 🎯 Set HTML attribute to calculatedMax            
         }
     }
 }

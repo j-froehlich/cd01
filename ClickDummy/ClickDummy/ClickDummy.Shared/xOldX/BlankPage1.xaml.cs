@@ -32,5 +32,7 @@ namespace ClickDummy
         private void GoToPrevPage(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(MainPage));
 
         private void NavigateBack(object sender, RoutedEventArgs e) => Frame.GoBack();
+        
+        void StartAnimation(object sender, RoutedEventArgs e) => myStoryboard.Begin();
     }
 }
