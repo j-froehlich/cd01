@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="ClickDummy.Shared.Views.Monitoring.MonitorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClickDummy.Shared.Views.Monitoring"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" Margin="0,100,40,0">
+            <!--<StackPanel.Resources>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Height" Value="300" />
+                    <Setter Property="Width" Value="40" />
+                </Style>
+            </StackPanel.Resources>-->
+            <local:MonitoringSessionComponent />
+            <local:MonitoringSessionComponent />
+            <local:MonitoringSessionComponent />
+            <!--<Rectangle Fill="Red"/>
+            <Rectangle Fill="Blue"/>
+            <Rectangle Fill="Green"/>
+            <Rectangle Fill="Yellow"/>-->
+        </StackPanel>
+
+        <Canvas Background="LightGray" Margin="-486,42,1411,28"/>
+        <Canvas Background="LightGray" Margin="29,39,85,980" >
+            <TextBox x:Name="textBox" Canvas.Left="337" Canvas.Top="10" Text="Filter for active monitoring sessions: Date, Project, Sonde, Status" TextWrapping="Wrap" Height="auto" Width="523"/>
+        </Canvas>
+        <TextBlock Text="Monitoring Page" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" SelectionChanged="TextBlock_SelectionChanged" Margin="-345,51,0,0" />
+        <Canvas Background="LightGray" Margin="1370,122,13,52"/>
+    </Grid>
+</Page>

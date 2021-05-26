@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="ClickDummy.Shared.Views.Shared.AppBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClickDummy.Shared.Views.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="80" d:DesignWidth="1364">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Projekt Management" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+            <Button Content="Session Management" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+            <Button Content="Monitoring" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+            <Button Content="Reporting" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+            <Button Content="Analyse" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+            <Button Content="Signal" Width="auto" Height="80" Click="AppBarButton_Click" Margin="10,10,5,10" MinWidth="140"/>
+        </StackPanel>
+
+        <AutoSuggestBox Grid.Column="1" Width="200" Height="50" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+    </Grid>
+
+</UserControl>

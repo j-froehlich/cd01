@@ -1,0 +1,59 @@
+﻿<UserControl    x:Class="ClickDummy.Shared.Views.Graphs.MultiAxes"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                 
+                 xmlns:lvc="using:LiveCharts.Uwp"
+                 xmlns:local="using:ClickDummy.Shared.Views.Graphs"
+                 mc:Ignorable="d" 
+                 d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <!--Grid.Resources>
+            <Style x:Key="CleanSeparator" TargetType="lvc:Separator">
+                <Setter Property="IsEnabled" Value="False"></Setter>
+            </Style>
+        </Grid.Resources-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" TextWrapping="Wrap">
+                You can create multiple axes, just set the Series.ScalesXAt or Series.ScalesYAt properties, you must also add the axis explicitly.
+        </TextBlock>
+
+        <!--<lvc:cartesianchart grid.row="2">
+            <lvc:cartesianchart.axisy>
+                <lvc:axis foreground="dodgerblue" title="blue axis"/>
+                <lvc:axis foreground="indianred" title="red axis" position="righttop">
+                    <lvc:axis.separator>
+                        <lvc:separator style="{staticresource cleanseparator}"></lvc:separator>
+                    </lvc:axis.separator>
+                </lvc:axis>
+                <lvc:axis foreground="darkolivegreen" title="green axis" position="righttop">
+                    <lvc:axis.separator>
+                        <lvc:separator style="{staticresource cleanseparator}"></lvc:separator>
+                    </lvc:axis.separator>
+                </lvc:axis>
+            </lvc:cartesianchart.axisy>
+            <lvc:cartesianchart.series>
+                <lvc:lineseries values="1,5,3,5,3" scalesyat="0"/>
+                -->
+        <!--scales at blue axis, axis[0]-->
+        <!--
+                <lvc:lineseries values="20,30,70,20,10"  scalesyat="1"/>
+                -->
+        <!--scales at red axis, axis[1]-->
+        <!--
+                <lvc:lineseries values="600,300,200,600,800"  scalesyat="2"/>
+                -->
+        <!--scales at green axis, axis[2]-->
+        <!--
+            </lvc:cartesianchart.series>
+        </lvc:cartesianchart>-->
+    </Grid>
+</UserControl>
+    
