@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using ClickDummy.Models;
+using ClickDummy.Shared.Models;
 using Windows.UI.Xaml;
 
-namespace ClickDummy.ViewModels
+namespace ClickDummy.Shared.ViewModels
 {
     /// <summary>
     /// ViewModel for main page (the only one yet) for the TodoApp

@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Windows.UI.Xaml.Data;
 
-namespace ClickDummy.Converters
+namespace ClickDummy.Shared.Converters
 {
     public class FromBooleanToDoubleConverter : IValueConverter
     {

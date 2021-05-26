@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Windows.UI.Xaml.Data;
 
-namespace ClickDummy.Converters
+namespace ClickDummy.Shared.Converters
 {
     public class StringFormatConverter : IValueConverter
     {

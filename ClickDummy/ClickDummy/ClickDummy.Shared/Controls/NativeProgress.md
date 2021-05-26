@@ -8,7 +8,7 @@ The `NativeProgress` control demonstrates how a different native control can be 
 
 ```xml
 <Page ...
-    xmlns:controls="using:ClickDummy.Controls">
+    xmlns:controls="using:ClickDummy.Shared.Controls">
 
     <controls:NativeProgress Value="{Binding Value, ElementName=slider}" />
     <Slider x:Name="slider" Value="50.0" />

@@ -1,6 +1,6 @@
 using Windows.UI.Xaml;
 
-namespace ClickDummy.Controls
+namespace ClickDummy.Shared.Controls
 {
 #if !NETFX_CORE
     public partial class NativeProgress

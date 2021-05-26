@@ -1,8 +1,8 @@
 using System;
 using Windows.UI.Xaml.Data;
-using ClickDummy.Models;
+using ClickDummy.Shared.Models;
 
-namespace ClickDummy.Converters
+namespace ClickDummy.Shared.Converters
 {
     public class FromStateItemsRemainingToPluralConverter : IValueConverter
     {

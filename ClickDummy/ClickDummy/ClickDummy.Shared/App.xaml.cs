@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -15,6 +16,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ClickDummy.Shared.Views;
+using ClickDummy.Shared.Services;
+using ClickDummy.Shared.Helpers;
+using Uno.Extensions;
 
 namespace ClickDummy
 {
@@ -23,12 +28,12 @@ namespace ClickDummy
     /// </summary>
     public sealed partial class App : Application
     {
-        #if NET5_0 && WINDOWS
+#if NET5_0 && WINDOWS
             private Window _window;
 
-        #else
-            private Windows.UI.Xaml.Window _window;
-        #endif
+#else
+        private Windows.UI.Xaml.Window _window;
+#endif
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -38,15 +43,22 @@ namespace ClickDummy
         {
             InitializeLogging();
 
-            #if __IOS__ || __ANDROID__
+#if __IOS__ || __ANDROID__
                 Uno.UI.FeatureConfiguration.Style.ConfigureNativeFrameNavigation();
-            #endif
+#endif
 
             this.InitializeComponent();
 
-            #if HAS_UNO || NETFX_CORE
-                this.Suspending += OnSuspending;
-            #endif
+#if HAS_UNO || NETFX_CORE
+            this.Suspending += OnSuspending;
+#endif
+
+            this.UnhandledException += App_UnhandledException;
+        }
+
+        private void App_UnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -56,36 +68,44 @@ namespace ClickDummy
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            #if DEBUG
-                if (System.Diagnostics.Debugger.IsAttached)
-                {
-                    // this.DebugSettings.EnableFrameRateCounter = true;
-                }
-            #endif
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                // this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
 
 
-
+            Uno.Material.Resources.Init(this, null);
             //Uno.Material.Resources.Init(this, null);
-            Uno.Material.Resources.Init(this, new ResourceDictionary { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
+            //Uno.Material.Resources.Init(this, new ResourceDictionary { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
             Uno.Cupertino.Resources.Init(this, null);
 
             // Set a default palette to make sure all colors used by MaterialResources exist
-            //this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialColorPalette());
+            this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialColorPalette());
 
             // Overlap the default colors with the application's colors palette.
-            //this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
+            this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
 
             // Add all the material resources. Those resources depend on the colors above, which is why this one must be added last.
-            //this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialResources());
+            this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialResources());
 
+            // start helpers
+            var tokenTask = TokenService.Instance;
+            tokenTask.Initialization.ContinueWith(
+                async ct =>
+                {
+                    this.Log().LogCritical($"Unable to initialize token service - {ct.Exception.Message}");
+                    await ErrorDialogHelper.ShowFatalErrorAsync<FatalErrorPage>("FatalErrorTitle", "FatalInitializeError");
+                },
+                TaskContinuationOptions.OnlyOnFaulted);
 
-
-            #if NET5_0 && WINDOWS
+#if NET5_0 && WINDOWS
                 _window = new Window();
                 _window.Activate();
-            #else
-                _window = Windows.UI.Xaml.Window.Current;
-            #endif
+#else
+            _window = Windows.UI.Xaml.Window.Current;
+#endif
 
             var rootFrame = _window.Content as Frame;
 
@@ -109,16 +129,16 @@ namespace ClickDummy
 
             ConfigureNavigation();
 
-            #if !(NET5_0 && WINDOWS)
-                if (e.PrelaunchActivated == false)
-            #endif
+#if !(NET5_0 && WINDOWS)
+            if (e.PrelaunchActivated == false)
+#endif
             {
                 if (rootFrame.Content == null)
                 {
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(ClickDummy.Views.Login.LoginPage), e.Arguments);
+                    rootFrame.Navigate(typeof(NavPage), e.Arguments);
                 }
                 // Ensure the current window is active
                 _window.Activate();
@@ -156,15 +176,15 @@ namespace ClickDummy
         {
             var factory = LoggerFactory.Create(builder =>
             {
-            #if __WASM__
+#if __WASM__
                 builder.AddProvider(new global::Uno.Extensions.Logging.WebAssembly.WebAssemblyConsoleLoggerProvider());
-            #elif __IOS__
+#elif __IOS__
                 builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
-            #elif NETFX_CORE
+#elif NETFX_CORE
                 builder.AddDebug();
-            #else
+#else
                 builder.AddConsole();
-            #endif
+#endif
 
                 // Exclude logs below this level
                 builder.SetMinimumLevel(LogLevel.Information);
@@ -211,7 +231,7 @@ namespace ClickDummy
             var manager = Windows.UI.Core.SystemNavigationManager.GetForCurrentView();
 
 
-        #if WINDOws_uwp || __WASM__
+#if WINDOws_uwp || __WASM__
             // Toggle the visibility of back button based on if the frame can navigate back.
             // Setting it to visible has the follow effect on the platform:
             // - uwp: add a `<-` back button on the title bar
@@ -219,9 +239,9 @@ namespace ClickDummy
             frame.Navigated += (s, e) => manager.AppViewBackButtonVisibility = frame.CanGoBack
                 ? Windows.UI.Core.AppViewBackButtonVisibility.Visible
                 : Windows.UI.Core.AppViewBackButtonVisibility.Collapsed;
-        #endif
+#endif
 
-        #if WINDOWS_UWP || __ANDROID__ || __WASM__
+#if WINDOWS_UWP || __ANDROID__ || __WASM__
             // On some platforms, the back navigation request needs to be hooked up to the back navigation of the Frame.
             // These requests can come from:
             // - uwp: title bar back button
@@ -236,7 +256,7 @@ namespace ClickDummy
                     e.Handled = true;
                 }
             };
-        #endif
+#endif
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using Windows.UI.Xaml.Data;
 using Uno.Extensions.Specialized;
 
-namespace ClickDummy.Converters
+namespace ClickDummy.Shared.Converters
 {
     public class FromEnumerableToCountConverter : IValueConverter
     {

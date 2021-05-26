@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 using Uno.Extensions.Specialized;
 
-namespace ClickDummy.Converters
+namespace ClickDummy.Shared.Converters
 {
     public class FromEnumerableAnyToVisibilityConverter : IValueConverter
     {

@@ -6,7 +6,7 @@ using Uno.UI;
 using Resource = Android.Resource;
 using Uno.UI.Controls;
 
-namespace ClickDummy.Controls
+namespace ClickDummy.Shared.Controls
 {
     /// 📚 <see cref="https://docs.microsoft.com/en-us/dotnet/api/android.widget.progressbar?view=xamarin-android-sdk-9" />
     public partial class NativeProgress : BindableProgressBar

@@ -1,7 +1,7 @@
 #if NETFX_CORE
 using Windows.UI.Xaml.Controls;
 
-namespace ClickDummy.Controls
+namespace ClickDummy.Shared.Controls
 {
     /// 📚 <see cref="https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.progressbar"/>
     public partial class NativeProgress : ProgressBar

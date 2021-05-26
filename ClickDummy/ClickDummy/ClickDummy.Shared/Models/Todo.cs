@@ -22,7 +22,7 @@ using Uno;
 ///     - Documentation here for Equality Members Generator
 /// </summary>
 /// 📚 <seealso cref="https://github.com/unoplatform/Uno.CodeGen"/>
-namespace ClickDummy.Models
+namespace ClickDummy.Shared.Models
 {
     [GeneratedImmutable]
     public partial class Todo

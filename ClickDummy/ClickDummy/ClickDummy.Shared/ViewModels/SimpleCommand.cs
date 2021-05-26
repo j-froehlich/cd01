@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace ClickDummy.ViewModels
+namespace ClickDummy.Shared.ViewModels
 {
     internal class SimpleCommand : ICommand
     {

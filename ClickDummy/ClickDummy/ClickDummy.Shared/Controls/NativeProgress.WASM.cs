@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Uno.UI.Controls;
 
-namespace ClickDummy.Controls
+namespace ClickDummy.Shared.Controls
 {
     /// 📚 <see cref="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress"/>
     public partial class NativeProgress : Control

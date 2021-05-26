@@ -3,67 +3,38 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ClickDummy"
-    RequestedTheme="Light"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    xmlns:helpers="using:ClickDummy.Shared.Helpers"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    RequestedTheme="Light">
 
     <Application.Resources>
         <ResourceDictionary>
-            <!--
-            <Style x:Key="ErrorStyle" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="DarkRed"/>
-                <Setter Property="FontFamily" Value="Segoe UI Semilight"/>
-                <Setter Property="FontSize" Value="15"/>
-            </Style>
-            <Style x:Key="StatusStyle" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="FontFamily" Value="Segoe UI Semilight"/>
-                <Setter Property="FontSize" Value="15"/>
-            </Style>
-            -->
-            
             <ResourceDictionary.MergedDictionaries>
                 <!-- Load WinUI resources -->
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
 
                 <!-- Application's custom styles -->
-                <!--ResourceDictionary Source="Converters.xaml" /-->
-                <!--
-                <controls:XamlControlsResources>
-                    <controls:XamlControlsResources.MergedDictionaries>
-                -->
-                        <!-- Other app resources here -->
-                <!--
-                    </controls:XamlControlsResources.MergedDictionaries>
-                </controls:XamlControlsResources>
-                -->
+
+                <!-- Other app resources here -->
 
                 <!-- Application's custom styles -->
                 <ResourceDictionary Source="Styles/Globals.xaml"/>
                 <!--ResourceDictionary Source="ms-appx:///Styles/Globals.xaml"/-->
                 <ResourceDictionary Source="Styles/_Styles.xaml"/>
-                <!--
-                <ResourceDictionary Source="ms-appx:///Styles/Application/Colors.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/Application/Fonts.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/Button.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/RadioButton.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/ToggleButton.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/XamlDisplay.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/SamplePageLayout.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/NavigationView.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/TextBlock.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/ToggleSwitch.xaml" />
-                <ResourceDictionary Source="ms-appx:///Styles/OverviewSampleView.xaml" />
-                -->
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+
+                <ResourceDictionary Source="Styles/ColorPaletteOverride.xaml"/>
+
                 <ResourceDictionary>
                     <x:Double x:Key="DesktopAdaptiveThresholdWidth">720</x:Double>
                 </ResourceDictionary>
 
                 <!-- other ResourceDictionaries -->
+                <ResourceDictionary>
+                    <helpers:NotOperatorValueConverter x:Key="NotOperatorValueConverter"/>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-            
-            <!--Style TargetType="ToggleSwitch" BasedOn="{StaticResource MaterialToggleSwitchStyle}"/-->
+
         </ResourceDictionary>
-
     </Application.Resources>
-
 </Application>

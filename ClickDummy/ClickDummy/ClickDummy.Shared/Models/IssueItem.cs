@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ClickDummy.Models
+namespace ClickDummy.Shared.Models
 {
     public class IssueItem : ObservableObject
     {

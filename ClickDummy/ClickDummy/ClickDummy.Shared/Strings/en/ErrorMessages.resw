@@ -117,67 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>ClickDummy</value>
-  </data>
-  <data name="DemoTextBox.Background" xml:space="preserve">
-    <value>Red</value>
-  </data>
-  <data name="DemoTextBox.Header" xml:space="preserve">
-    <value>Demo Text Box</value>
-  </data>
-  <data name="DemoTextBox.PlaceholderText" xml:space="preserve">
-    <value>Enter the demo text</value>
-  </data>
-  <data name="DemoTextBox.Width" xml:space="preserve">
-    <value>400</value>
-  </data>
-  <data name="FatalError.Foreground" xml:space="preserve">
-    <value>Red</value>
-  </data>
-  <data name="FatalError.Text" xml:space="preserve">
-    <value>The application has encountered a fatal error. Please close and restart the application</value>
-  </data>
-  <data name="LoginButton.Content" xml:space="preserve">
-    <value>|  LOGIN</value>
-  </data>
-  <data name="LoginDialog.PrimaryButtonText" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="LoginDialog.SecondaryButtonText" xml:space="preserve">
+  <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="LoginDialog.Title" xml:space="preserve">
-    <value>Login</value>
+  <data name="ExitApp" xml:space="preserve">
+    <value>Exit Application</value>
   </data>
-  <data name="LogoutButton.Content" xml:space="preserve">
-    <value>|  LOGOUT</value>
+  <data name="FatalErrorTitle" xml:space="preserve">
+    <value>Fatal Error</value>
   </data>
-  <data name="NavAbout.Content" xml:space="preserve">
-    <value>About</value>
+  <data name="FatalInitializeError" xml:space="preserve">
+    <value>Unable to initialize services - application must be restarted</value>
   </data>
-  <data name="NavAdmin.Content" xml:space="preserve">
-    <value>Admin</value>
+  <data name="LoginDialogLoginFailed" xml:space="preserve">
+    <value>The user name or password is incorrect</value>
   </data>
-  <data name="NavHome.Content" xml:space="preserve">
-    <value>Home</value>
+  <data name="LoginDialogUserNameRequired" xml:space="preserve">
+    <value>User name and Password are required</value>
   </data>
-  <data name="NavReports.Content" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="NavTimeEntry.Content" xml:space="preserve">
-    <value>Time Entry</value>
-  </data>
-  <data name="Password.Header" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="StaySignedIn.Content" xml:space="preserve">
-    <value>Keep me signed in</value>
-  </data>
-  <data name="UserName.Header" xml:space="preserve">
-    <value>User name</value>
-  </data>
-  <data name="WelcomeText" xml:space="preserve">
-    <value>Welcome {0}</value>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

@@ -5,7 +5,7 @@ using Uno.UI.Views.Controls;
 using Windows.UI.Xaml;
 using CoreImage;
 
-namespace ClickDummy.Controls
+namespace ClickDummy.Shared.Controls
 {
     /// 📚 <see cref="https://docs.microsoft.com/en-us/dotnet/api/uikit.uiprogressview?view=xamarin-ios-sdk-12"/>
     public partial class NativeProgress : BindableUIProgressView
