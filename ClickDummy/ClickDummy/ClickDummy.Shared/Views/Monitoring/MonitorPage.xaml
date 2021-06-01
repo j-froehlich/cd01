@@ -5,7 +5,9 @@
     xmlns:local="using:ClickDummy.Shared.Views.Monitoring"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    d:DesignWidth="1920" d:DesignHeight="1080"
+    Height="1800" Width="1920"
+    mc:Ignorable="d" Background="White">
 
     <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
         <StackPanel Orientation="Vertical" Margin="0,100,40,0">

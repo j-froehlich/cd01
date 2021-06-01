@@ -5,9 +5,14 @@
     xmlns:local="using:ClickDummy.Shared.Views.Analysing"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignWidth="1920" d:DesignHeight="1080"
+    Height="1800" Width="1920"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Analyse Page" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBlock Text="Analyse Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBox x:Name="textBox_Copy2" Text="Filter Element" TextWrapping="Wrap" Margin="71,62,517,819" TextChanged="textBox_TextChanged" Background="#66B07A7A" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        <TextBox x:Name="textBox_Copy1" Text="Selection Info" TextWrapping="Wrap" Margin="1447,62,53,56" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        <TextBox x:Name="textBox_Copy" Text="Analyse Configuration" TextWrapping="Wrap" Margin="71,304,517,55" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
     </Grid>
 </Page>

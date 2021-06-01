@@ -26,5 +26,10 @@ namespace ClickDummy.Shared.Views.Reporting
         {
             this.InitializeComponent();
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace ClickDummy.Shared.Views.Signal
         {
 
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

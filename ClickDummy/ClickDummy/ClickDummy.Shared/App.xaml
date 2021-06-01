@@ -4,9 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ClickDummy"
     xmlns:helpers="using:ClickDummy.Shared.Helpers"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns:extensions="using:Uno.Material.Extensions"
     RequestedTheme="Light">
 
+    <!--
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignColors="using:MaterialDesignColors"
+    -->
+    
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,12 +21,17 @@
                 <!-- Application's custom styles -->
 
                 <!-- Other app resources here -->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Teal.xaml" />-->
 
                 <!-- Application's custom styles -->
                 <ResourceDictionary Source="Styles/Globals.xaml"/>
                 <!--ResourceDictionary Source="ms-appx:///Styles/Globals.xaml"/-->
                 <ResourceDictionary Source="Styles/_Styles.xaml"/>
                 <ResourceDictionary Source="Resources/Styles.xaml"/>
+                <!--<ResourceDictionary Source="Styles/Application/NavigationViewOverride.xaml"/>-->
 
                 <ResourceDictionary Source="Styles/ColorPaletteOverride.xaml"/>
 
@@ -34,6 +44,13 @@
                     <helpers:NotOperatorValueConverter x:Key="NotOperatorValueConverter"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
+
+            <!--<ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource IndigoPrimary900}"/>
+                    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource IndigoPrimary300Foreground}"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>-->
 
         </ResourceDictionary>
     </Application.Resources>

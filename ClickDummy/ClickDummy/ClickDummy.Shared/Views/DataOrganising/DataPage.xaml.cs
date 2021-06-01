@@ -31,5 +31,10 @@ namespace ClickDummy.Shared.Views.DataOrganising
         {
 
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
