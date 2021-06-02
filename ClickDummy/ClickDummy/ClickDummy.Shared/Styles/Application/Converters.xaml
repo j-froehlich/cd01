@@ -4,7 +4,6 @@
     xmlns:converters="using:ClickDummy.Shared.Converters"
     xmlns:local="using:ClickDummy">
 
-
     <converters:FromBooleanToDoubleConverter x:Key="TrueToWeakOpacity" />
     <converters:FromEnumerableAnyToVisibilityConverter x:Key="FromAnyToVisibileConverter" IsAnyVisible="True" />
     <converters:FromEnumerableAnyToVisibilityConverter x:Key="FromAnyToInvisibileConverter" IsAnyVisible="False" />

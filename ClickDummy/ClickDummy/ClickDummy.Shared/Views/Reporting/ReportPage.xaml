@@ -6,18 +6,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignWidth="1920" d:DesignHeight="1080"
-    Height="1800" Width="1920"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Reporting Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" />
-        <TextBox x:Name="textBox" Text="Project/Session Filter&#xD;&#xD;Filter Options: Session Attributes, Date, Status, Project, etc&#xD;&#xA;" TextWrapping="Wrap" Margin="118,76,1164,850" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy" Text="Project List" TextWrapping="Wrap" Margin="118,250,1593,68" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy1" Text="Session List" TextWrapping="Wrap" Margin="333,250,1163,68" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy2" Text="Export Configuration" TextWrapping="Wrap" Margin="803,84,77,759" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy3" Text="Export Preview&#xD;&#xA;" TextWrapping="Wrap" Margin="803,563,77,67" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
-        <Rectangle Stroke="Black" Margin="1778,84,77,939" Fill="#7F666666"/>
-        <Rectangle Stroke="Black" Margin="1769,575,86,448" Fill="#7F666666"/>
-        <TextBox x:Name="textBox_Copy4" Text="Export Joblist" TextWrapping="Wrap" Margin="803,341,77,549" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="529*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Title" Text="Reporting Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" Margin="0,54,0,0" Grid.ColumnSpan="2" />
+        <Grid x:Name="Filter" Margin="24,24,24,24">
+            <TextBox x:Name="textBox" Text="Project/Session Filter&#xA;&#xA;Filter Options: Session Attributes, Date, Status, Project, etc&#xA;" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66B07A7A" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Selector" Grid.Row="1" Grid.RowSpan="3" Margin="24,24,24,24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="Project" Margin="0,0,12,0">
+                <TextBox x:Name="textBox_Copy" Text="Project List" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+            </Grid>
+            <Grid x:Name="Session" Margin="12,0,0,0" Grid.ColumnSpan="2" Grid.Column="1">
+                <TextBox x:Name="textBox_Copy1" Text="Session List" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Export_Config" Grid.Column="1" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy2" Text="Export Configuration" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+            <Rectangle Stroke="Black" Margin="0,0,0,0" Fill="#7F666666" Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid x:Name="Export_Joblist" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy4" Text="Export Joblist" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+            <Rectangle Stroke="Black" Margin="0,0,0,0" Fill="#7F666666" Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid x:Name="Export_Preview" Grid.Row="3" Grid.Column="1" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy3" Text="Export Preview&#xA;" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" FontSize="24"/>
+            <Rectangle Stroke="Black" Margin="0,0,0,0" Fill="#7F666666" Width="40" Height="40" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
 </Page>

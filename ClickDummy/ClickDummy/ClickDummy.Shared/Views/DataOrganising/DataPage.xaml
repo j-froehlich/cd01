@@ -6,85 +6,102 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignWidth="1920" d:DesignHeight="1080"
-    Height="1800" Width="1920"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Data Organization Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" SelectionChanged="TextBlock_SelectionChanged" />
-
-        <TextBox x:Name="textBox_Copy3" Text="Project Selector" TextWrapping="Wrap" Margin="71,286,1601,53" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <TextBox x:Name="textBox_Copy" Text="Session Selector" TextWrapping="Wrap" Margin="353,286,517,53" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <TextBox x:Name="textBox_Copy1" Text="Selection Info" TextWrapping="Wrap" Margin="1453,62,47,535" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <TextBox x:Name="textBox_Copy2" Text="Filter Element" TextWrapping="Wrap" Margin="71,62,517,819" TextChanged="textBox_TextChanged" Background="#66B07A7A" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <TextBox x:Name="textBox_Copy4" Text="Job list short" TextWrapping="Wrap" Margin="1453,586,47,53" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <Rectangle HorizontalAlignment="Left" Height="433" Margin="1466,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-        <Rectangle HorizontalAlignment="Right" Height="40" Stroke="Black" VerticalAlignment="Top" Width="40" Margin="0,62,47,0" Fill="#66ACACAC"/>
-        <Grid HorizontalAlignment="Left" Height="683" VerticalAlignment="Top" Margin="82,324,0,0">
-            <Rectangle HorizontalAlignment="Left" Height="23" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Stroke="Black" VerticalAlignment="Center" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,510,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,570,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,630,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,660,0,0" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <Rectangle HorizontalAlignment="Left" Height="123" Margin="0,90,0,0" Fill="White" Stroke="Black" VerticalAlignment="Top" Width="226"/>
-            <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="0,103,0,0" Text="Project Detail / Edit View " TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="176"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="263*"/>
+            <RowDefinition Height="301*"/>
+            <RowDefinition Height="517*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Title" Text="Data Organization Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" SelectionChanged="TextBlock_SelectionChanged" Grid.Column="1" Margin="0,44,0,0" />
+        <Grid x:Name="Project" Height="770" Margin="24,24,24,24" Grid.Row="1" Grid.RowSpan="2">
+            <TextBox x:Name="Project_Selector" Text="Project Selector" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
+            <Grid Margin="24,44,24,24">
+                <Rectangle Height="23" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="Auto"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="Auto"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="Auto"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,210,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,300,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Stroke="Black" VerticalAlignment="Top" Margin="0,331,0,0"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,360,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,390,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,420,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,450,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,480,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,510,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,540,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,570,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,600,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,630,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,660,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="123" Margin="0,90,0,0" Fill="White" Stroke="Black" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="0,103,0,0" Text="Project Detail / Edit View " TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="176"/>
+            </Grid>
         </Grid>
-
-        <Grid HorizontalAlignment="Right" Height="310" VerticalAlignment="Top" Margin="0,717,66,0" Width="388">
-            <Rectangle HorizontalAlignment="Center" Height="23" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Left" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top" Width="388"/>
-            <Rectangle HorizontalAlignment="Right" Height="40" Stroke="Black" VerticalAlignment="Top" Width="40" Margin="0,-127,-18,0" Fill="#66ACACAC"/>
+        <Grid x:Name="Filter" Grid.ColumnSpan="2" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy2" Text="Filter Element" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66B07A7A" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
         </Grid>
-
-        <Grid HorizontalAlignment="Left" Height="683" VerticalAlignment="Top" Margin="371,324,0,0" Width="1019">
-            <Rectangle HorizontalAlignment="Center" Height="23" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Stroke="Black" VerticalAlignment="Center" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,510,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,570,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,630,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle HorizontalAlignment="Center" Height="23" Margin="0,660,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
-            <Rectangle Height="123" Margin="0,210,0,0" Stroke="Black" Fill="White" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1019"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="37,235,0,0" Text="Session Detail / Edit View " TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="176"/>
+        <Grid x:Name="Session" Grid.Column="1" Margin="24,24,24,24" Grid.Row="1" Grid.RowSpan="2">
+            <TextBox x:Name="textBox_Copy" Text="Session Selector" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" VerticalAlignment="Stretch"/>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="24,44,24,24">
+                <Rectangle Height="23" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Height="23"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,90,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,300,0,0" Stroke="Black" VerticalAlignment="Top" Width="1019"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Stroke="Black" VerticalAlignment="Center"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,360,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,390,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,420,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,450,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,480,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,510,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,540,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,570,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,600,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,630,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,660,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle Height="123" Margin="0,210,0,0" Stroke="Black" Fill="White" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="37,235,0,0" Text="Session Detail / Edit View " TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="176"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Joblist" Grid.Row="2" Grid.Column="2" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy4" Text="Job list short" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
+            <Grid VerticalAlignment="Bottom" Margin="24,0,24,24" Height="304">
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Stroke="Black" VerticalAlignment="Top" Width="Auto"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,60,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,90,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,120,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,150,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,180,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,210,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,240,0,0" Stroke="Black" VerticalAlignment="Top"/>
+                <Rectangle HorizontalAlignment="Stretch" Height="23" Margin="0,270,0,0" Stroke="Black" VerticalAlignment="Top"/>
+            </Grid>
+            <Rectangle HorizontalAlignment="Right" Height="40" Stroke="Black" VerticalAlignment="Top" Width="40" Margin="0,0,0,0" Fill="#66ACACAC"/>
+            <TextBox x:Name="Calendar" Text="Calendar Widget" TextWrapping="Wrap" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" VerticalAlignment="Top" Margin="24,54,24,0"/>
+        </Grid>
+        <Grid x:Name="Selection_info" Margin="24,24,24,24" Grid.Column="3" Grid.RowSpan="2">
+            <TextBox x:Name="textBox_Copy1" Text="Selection Info" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="24,54,24,24" Stroke="Black"/>
+            <Rectangle HorizontalAlignment="Right" Height="40" Stroke="Black" VerticalAlignment="Top" Width="40" Margin="0,0,0,0" Fill="#66ACACAC"/>
         </Grid>
     </Grid>
 </Page>

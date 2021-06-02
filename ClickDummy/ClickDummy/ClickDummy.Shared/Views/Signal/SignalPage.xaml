@@ -6,14 +6,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignWidth="1920" d:DesignHeight="1080"
-    Height="1800" Width="1920"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Signal Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" />
-        <TextBox x:Name="textBox_Copy2" Text="Log / Status Area" TextWrapping="Wrap" Margin="87,701,47,47" TextChanged="textBox_TextChanged" Background="#6693B07A" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
-        <TextBox x:Name="textBox_Copy1" Text="verify communication data integerity&#xD;&#xA;&#xD;&#xA;show detail view needed for current selection" TextWrapping="Wrap" Margin="444,80,673,420" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy" Text="Selection area&#xD;&#xA;&#xD;&#xA;api call check type" TextWrapping="Wrap" Margin="87,80,1521,420" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy3" Text="MessageHub Config" TextWrapping="Wrap" Margin="1298,80,46,420" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="341*"/>
+            <RowDefinition Height="199*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="425*"/>
+            <ColumnDefinition Width="854*"/>
+            <ColumnDefinition Width="641*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Title" Text="Signal Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" Margin="0,44,0,0" Grid.ColumnSpan="3" />
+        <Grid x:Name="Selection" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy" Text="Selection area&#xA;&#xA;api call check type" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Report_Area" Margin="24,24,24,24" Grid.Column="1">
+            <TextBox x:Name="textBox_Copy1" Text="verify communication data integerity&#xA;&#xA;show detail view needed for current selection" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="MessageHub" Margin="24,24,24,24" Grid.Column="2">
+            <TextBox x:Name="textBox_Copy3" Text="MessageHub Config" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Log_Area" Margin="24,24,24,24" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBox x:Name="textBox_Copy2" Text="Log / Status Area" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#6693B07A" Style="{StaticResource MaterialOutlinedTextBoxStyle}"/>
+        </Grid>
     </Grid>
 </Page>

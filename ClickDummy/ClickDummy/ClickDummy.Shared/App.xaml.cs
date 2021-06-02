@@ -82,23 +82,23 @@ namespace ClickDummy
             Uno.Cupertino.Resources.Init(this, null);
 
             // Set a default palette to make sure all colors used by MaterialResources exist
-            this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialColorPalette());
+            //this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialColorPalette());
 
             // Overlap the default colors with the application's colors palette.
-            this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
+            //this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("ms-appx:///Styles/ColorPaletteOverride.xaml") });
 
             // Add all the material resources. Those resources depend on the colors above, which is why this one must be added last.
-            this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialResources());
+            //this.Resources.MergedDictionaries.Add(new global::Uno.Material.MaterialResources());
 
             // start helpers
-            var tokenTask = TokenService.Instance;
-            tokenTask.Initialization.ContinueWith(
-                async ct =>
-                {
-                    this.Log().LogCritical($"Unable to initialize token service - {ct.Exception.Message}");
-                    await ErrorDialogHelper.ShowFatalErrorAsync<FatalErrorPage>("FatalErrorTitle", "FatalInitializeError");
-                },
-                TaskContinuationOptions.OnlyOnFaulted);
+            // var tokenTask = TokenService.Instance;
+            //tokenTask.Initialization.ContinueWith(
+            //    async ct =>
+            //    {
+            //        this.Log().LogCritical($"Unable to initialize token service - {ct.Exception.Message}");
+            //        await ErrorDialogHelper.ShowFatalErrorAsync<FatalErrorPage>("FatalErrorTitle", "FatalInitializeError");
+            //    },
+            //    TaskContinuationOptions.OnlyOnFaulted);
 
 #if NET5_0 && WINDOWS
                 _window = new Window();

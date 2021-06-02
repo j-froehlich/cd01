@@ -3,14 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ClickDummy">
 
-
     <Color x:Key="LightGreenColor">#53c9ab</Color>
     <Color x:Key="WhiteColor">#ffffff</Color>
     <!-- Base Color Brushes -->
 
-    <SolidColorBrush x:Key="LightGreenBrush"
-                     Color="{StaticResource LightGreenColor}" />
-    <SolidColorBrush x:Key="WhiteBrush"
-                     Color="{StaticResource WhiteColor}" />
+    <SolidColorBrush x:Key="LightGreenBrush" Color="{StaticResource LightGreenColor}" />
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource WhiteColor}" />
 
 </ResourceDictionary>

@@ -6,13 +6,31 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignWidth="1920" d:DesignHeight="1080"
-    Height="1800" Width="1920"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Analyse Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" />
-        <TextBox x:Name="textBox_Copy2" Text="Filter Element" TextWrapping="Wrap" Margin="71,62,517,819" TextChanged="textBox_TextChanged" Background="#66B07A7A" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy1" Text="Selection Info" TextWrapping="Wrap" Margin="1447,62,53,56" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
-        <TextBox x:Name="textBox_Copy" Text="Analyse Configuration" TextWrapping="Wrap" Margin="71,304,517,55" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Default" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="600*"/>
+            <RowDefinition Height="211*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="Title" Text="Analyse Page" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" Margin="0,44,0,0" Height="37" Width="168" Grid.Column="1" />
+        <Grid x:Name="Filter" Grid.ColumnSpan="2" Margin="24,24,24,24">
+            <TextBox x:Name="textBox_Copy2" Text="Filter Element" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66B07A7A" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Selection_Info" Margin="24,24,24,24" Grid.RowSpan="2" Grid.Column="2">
+            <TextBox x:Name="textBox_Copy1" Text="Selection Info" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Analyse_Configuration" Grid.ColumnSpan="2" Margin="24,24,24,24" Grid.Row="1">
+            <TextBox x:Name="textBox_Copy" Text="Analyse Configuration" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
+        <Grid x:Name="Result" Grid.ColumnSpan="3" Margin="24,24,24,24" Grid.Row="2">
+            <TextBox x:Name="textBox_Copy3" Text="Result Area" TextWrapping="Wrap" Margin="0,0,0,0" TextChanged="textBox_TextChanged" Background="#66ACACAC" Style="{StaticResource MaterialOutlinedTextBoxStyle}" FontSize="24"/>
+        </Grid>
     </Grid>
 </Page>
