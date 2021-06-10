@@ -26,9 +26,22 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NotOperatorValueConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TimeEntryRoles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MonitorTouch\ThemingControl.xaml.cs">
+      <DependentUpon>ThemingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MonitorTouch\ThemingPage.xaml.cs">
+      <DependentUpon>ThemingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Mvvm\BindableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mvvm\DelegateCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthenticationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Icons\Icon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Navigation\Navigation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SingletonBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Theming\Theme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\TokenService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Configuration\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -37,6 +50,15 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Login\LoginStatus.xaml.cs">
       <DependentUpon>LoginStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainNavigation.xaml.cs">
+      <DependentUpon>MainNavigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitoringSessionComponentNoControl.xaml.cs">
+      <DependentUpon>MonitoringSessionComponentNoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorSingleView.xaml.cs">
+      <DependentUpon>MonitorSingleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Shared\FatalErrorPage.xaml.cs">
       <DependentUpon>FatalErrorPage.xaml</DependentUpon>
@@ -90,6 +112,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorPage.xaml.cs">
       <DependentUpon>MonitorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorFullScreen.xaml.cs">
+      <DependentUpon>MonitorFullScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Reporting\ReportPage.xaml.cs">
       <DependentUpon>ReportPage.xaml</DependentUpon>
     </Compile>
@@ -118,7 +143,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="$(MSBuildThisFileDirectory)MonitorTouch\ThemingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)MonitorTouch\ThemingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Services\Icons\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Services\Theming\Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,7 +235,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\MainNavigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorFullScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitoringSessionComponentNoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Monitoring\MonitorSingleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

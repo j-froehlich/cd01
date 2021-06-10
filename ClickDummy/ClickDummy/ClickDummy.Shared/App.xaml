@@ -32,6 +32,10 @@
                 <ResourceDictionary Source="Styles/_Styles.xaml"/>
                 <ResourceDictionary Source="Resources/Styles.xaml"/>
                 <!--<ResourceDictionary Source="Styles/Application/NavigationViewOverride.xaml"/>-->
+                <ResourceDictionary Source="Services/Theming/Theme.xaml" />
+
+                <!-- Icons -->
+                <ResourceDictionary Source="Services/Icons/Icons.xaml" />
 
                 <ResourceDictionary Source="Styles/ColorPaletteOverride.xaml"/>
 

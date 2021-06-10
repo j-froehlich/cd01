@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="ClickDummy.Views.MainNavigation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClickDummy.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="900"
+    d:DesignHeight="600"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <SplitView x:Name="MySplitView"
+            IsPaneOpen="False"
+            CompactPaneLength="48"
+            OpenPaneLength="200"
+            PaneBackground="{StaticResource SplitViewBackgroundBrush}"
+            DisplayMode="Overlay">
+        <SplitView.Pane>
+            <Grid x:Name="SplitViewPane"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Background="{StaticResource SplitViewBackgroundBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ListView x:Name="Menu"
+                        ItemsSource="{Binding Menu}"
+                        SelectionChanged="Menu_SelectionChanged"
+                        ItemContainerStyle="{StaticResource MenuListViewItemStyle}"
+                        ItemTemplate="{StaticResource MenuItemTemplate}" />
+                <ListView x:Name="SecondMenu"
+                        ItemsSource="{Binding SecondMenu}"
+                        SelectionChanged="Menu_SelectionChanged"
+                        ItemContainerStyle="{StaticResource MenuListViewItemStyle}"
+                        ItemTemplate="{StaticResource MenuItemTemplate}"
+                        Grid.Row="2" />
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid Background="{StaticResource PageBackgroundBrush}">
+                <!-- Navigation Frame -->
+                <Frame x:Name="SplitViewFrame" Navigated="SplitViewFrame_OnNavigated"
+                    Padding="0 0 0 0">
+                </Frame>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</Page>

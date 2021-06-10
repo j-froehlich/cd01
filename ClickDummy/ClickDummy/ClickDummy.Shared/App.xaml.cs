@@ -20,6 +20,8 @@ using ClickDummy.Shared.Views;
 using ClickDummy.Shared.Services;
 using ClickDummy.Shared.Helpers;
 using Uno.Extensions;
+using Windows.UI.Core;
+using ClickDummy.Services;
 
 namespace ClickDummy
 {
@@ -138,6 +140,7 @@ namespace ClickDummy
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
+                    Theme.ApplyToContainer();
                     rootFrame.Navigate(typeof(NavPage), e.Arguments);
                 }
                 // Ensure the current window is active
@@ -227,8 +230,8 @@ namespace ClickDummy
 
         private void ConfigureNavigation()
         {
-            var frame = (Frame)Windows.UI.Xaml.Window.Current.Content;
-            var manager = Windows.UI.Core.SystemNavigationManager.GetForCurrentView();
+            var frame = (Frame)Window.Current.Content;
+            var manager = SystemNavigationManager.GetForCurrentView();
 
 
 #if WINDOws_uwp || __WASM__

@@ -7,18 +7,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignWidth="803.588"
-    d:DesignHeight="461.826">
+    d:DesignWidth="900"
+    d:DesignHeight="600">
 
     <Grid>
-        <NavigationView x:Name="MainNavView" 
-                        Style="{StaticResource MaterialNavigationViewStyle}" 
+        <NavigationView x:Name="MainNavView"
                         PaneDisplayMode="Left"
                         IsBackEnabled="{Binding ElementName=ContentFrame, Path=CanGoBack}">
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="NavHome" Content="Home" Icon="Home" ToolTipService.ToolTip="Home" Tag="StartPage"/>
                 <NavigationViewItem x:Uid="NavData" Content="Data Organization" Icon="AllApps" ToolTipService.ToolTip="Data Management" Tag="DataOrganization"/>
-                <NavigationViewItem x:Uid="NavMonitor" Content="Monitoring" Icon="Video" ToolTipService.ToolTip="Session Monitoring" Tag="Monitoring"/>
+                <NavigationViewItem x:Uid="NavMonitor" Content="Monitoring" Icon="Video" ToolTipService.ToolTip="Session Monitoring" Tag="Monitoring">
+                    <!--<NavigationViewItem.MenuItems>
+                        <NavigationViewItem x:Uid="NavMonitor" Content="Monitoring" Icon="Video" ToolTipService.ToolTip="Session Monitoring" Tag="Monitoring"/>
+                    </NavigationViewItem.MenuItems>-->
+                </NavigationViewItem>
                 <NavigationViewItem x:Uid="NavReport" Content="Reporting" Icon="Page2" ToolTipService.ToolTip="Data Reporting" Tag="Reporting"/>
                 <NavigationViewItem x:Uid="NavSignal" Content="Signal" Icon="Page2" ToolTipService.ToolTip="MessegeHub Tools" Tag="Signal">
                     <!--<NavigationViewItem x:Uid="NavSignal" Content="Signal" Icon="Page2" ToolTipService.ToolTip="MessegeHub Tools">-->
